@@ -1,0 +1,20 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Print message
+        run: echo "Building and deploying analytics-worker"
+      - name: Build
+        run: |
+          echo "Building analytics-worker"
+          echo "Done building analytics-worker"
